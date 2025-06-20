@@ -13,7 +13,7 @@ area is used to determine the device name and which DMA areas are provided.
 
 BAR0 is intended to provide access to the general purpose registers in the FPGA
 implementation.  User space access to this register area is available by using
-``mmap`` to map the device node `name`\ .\ ``reg``, which is always available.
+``mmap`` to map the device node `name`\ ``.reg``, which is always available.
 This node also provides information about interrupts which can be obtained
 through calls to ``select`` and ``read``.
 

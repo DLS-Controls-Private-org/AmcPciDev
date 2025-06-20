@@ -38,6 +38,11 @@ MODULE_VERSION(S(VERSION));
 #define AMC525_DID      0x7038
 #define AMC525_SID      0x0007
 
+#define IOXOS_VID       0x7357          // IOxOS vendor ID
+#define IOXOS_DID       0x1412          // IFC_1412
+#define DLS_SVID        0xD1A3          // Diamond Light Source
+#define DLS_SDID        0x0001          // Specific device for this driver
+
 
 /* Expected length of BAR2. */
 #define BAR2_LENGTH     16384           // 4 separate IO pages
@@ -541,6 +546,7 @@ static void amc_pci_remove(struct pci_dev *pdev)
 
 static struct pci_device_id amc_pci_ids[] = {
     { PCI_DEVICE_SUB(XILINX_VID, AMC525_DID, XILINX_VID, AMC525_SID) },
+    { PCI_DEVICE_SUB(IOXOS_VID, IOXOS_DID, DLS_SVID, DLS_SDID) },
     { 0 }
 };
 
